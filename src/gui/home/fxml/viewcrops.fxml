@@ -7,6 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
+<?import com.jfoenix.controls.JFXComboBox?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.home.controllers.CropsController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="Your Products">
@@ -14,31 +15,34 @@
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <ListView onMouseClicked="#updateContents" fx:id="myProductList" layoutX="13.0" layoutY="34.0" prefHeight="351.0" prefWidth="200.0" />
+      <ListView fx:id="myProductList" layoutX="13.0" layoutY="34.0" prefHeight="351.0" prefWidth="200.0" />
       <Label layoutX="235.0" layoutY="14.0" text="Select Action">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="addProductButton" onMouseClicked="#addProduct" layoutX="234.0" layoutY="42.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Add New Product" />
-      <Button fx:id="removeProductButton" onMouseClicked="#removeProduct" layoutX="224.0" layoutY="353.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Remove Product" textFill="#ff2c19" />
-      <Button fx:id="editPriceButton" onMouseClicked="#editProduct" layoutX="370.0" layoutY="42.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Edit Price" />
-      <Button fx:id="updateQuantityButton" onMouseClicked="#updateQuantity" layoutX="463.0" layoutY="42.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Update Quantity" />
-      <Label layoutX="235.0" layoutY="82.0" text="Price:">
+      <Button fx:id="addProductButton" layoutX="420.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#addProduct" prefHeight="27.0" prefWidth="112.0" stylesheets="@css/style.css" text="Add New Product" />
+      <Button fx:id="removeProductButton" layoutX="224.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#removeProduct" stylesheets="@css/style.css" text="Remove Product" textFill="#ff2c19" />
+      <Button fx:id="editPriceButton" layoutX="420.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#editProduct" prefHeight="27.0" prefWidth="112.0" stylesheets="@css/style.css" text="Edit Price" />
+      <Button fx:id="updateQuantityButton" layoutX="420.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#updateQuantity" prefHeight="27.0" prefWidth="112.0" stylesheets="@css/style.css" text="Update Quantity" />
+      <Label layoutX="227.0" layoutY="131.0" text="Quantity Remaining:">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="235.0" layoutY="107.0" text="Quantity Remaining:">
+      <Label layoutX="283.0" layoutY="88.0" text="P0.00">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
+      <Label layoutX="362.0" layoutY="131.0" text="0">
       <Label fx:id="priceLabel" layoutX="281.0" layoutY="82.0" text="P0.00">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
+      <JFXComboBox layoutX="234.0" layoutY="43.0" prefHeight="25.0" prefWidth="112.0" promptText="Add Product" />
+      <Label layoutX="243.0" layoutY="88.0" text="Price:">
       <Label fx:id="quantityLabel" layoutX="370.0" layoutY="107.0" text="0">
          <font>
             <Font name="Segoe UI" size="14.0" />
