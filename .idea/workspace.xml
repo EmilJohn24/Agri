@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2ac0945-1a14-47f8-b66c-4a8630b4cab0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="e2ac0945-1a14-47f8-b66c-4a8630b4cab0" name="Default Changelist" comment="Fixed casting error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LBYCPA2/gui/home/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LBYCPA2/gui/home/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LBYCPA2/management/AccountManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LBYCPA2/management/AccountManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LBYCPA2/management/account_types/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LBYCPA2/management/account_types/Consumer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LBYCPA2/management/account_types/Producer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LBYCPA2/management/account_types/Producer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LBYCPA2/market/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LBYCPA2/market/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/LBYCPA2/market/MarketTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/LBYCPA2/market/MarketTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/home/controllers/CropsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/home/controllers/CropsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/home/fxml/viewcrops.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/home/fxml/viewcrops.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/market/MarketTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/market/MarketTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/management/account_types/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/account_types/Producer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +37,8 @@
         <entry file="file://$PROJECT_DIR$/src/gui/home/fxml/viewcrops.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="147">
+              <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -48,11 +46,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/home/controllers/CropsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="228">
+              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/home/controllers/FriendsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -76,31 +83,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/home/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/management/AccountManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/management/account_types/Producer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="238">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -120,8 +106,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/market/MarketTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="323">
+              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -198,8 +193,8 @@
         <option value="$PROJECT_DIR$/src/market/Item.java" />
         <option value="$PROJECT_DIR$/src/management/AccountManager.java" />
         <option value="$PROJECT_DIR$/test/market/MarketTest.java" />
-        <option value="$PROJECT_DIR$/src/management/account_types/Producer.java" />
         <option value="$PROJECT_DIR$/src/gui/home/fxml/viewcrops.fxml" />
+        <option value="$PROJECT_DIR$/src/management/account_types/Producer.java" />
         <option value="$PROJECT_DIR$/src/gui/home/controllers/CropsController.java" />
       </list>
     </option>
@@ -270,18 +265,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="management" type="462c0819:PsiDirectoryNode" />
               <item name="account_types" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LBYCPA2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LBYCPA2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LBYCPA2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LBYCPA2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="market" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LBYCPA2" type="b2602c69:ProjectViewProjectNode" />
@@ -455,7 +438,28 @@
       <option name="project" value="LOCAL" />
       <updated>1575994286083</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed casting error">
+      <created>1575995049684</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575995049684</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed casting error">
+      <created>1575995184404</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575995184404</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed casting error">
+      <created>1575995356654</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575995356654</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -552,13 +556,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added some functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some functions" />
+    <MESSAGE value="Fixed casting error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed casting error" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/gui/home/controllers/register.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/home/controllers/reserve.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -602,13 +603,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/home/fxml/css/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/home/controllers/FriendsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/home/controllers/HowToController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -820,24 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/market/MarketTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/management/AccountManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/management/account_types/Producer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -872,18 +852,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/market/MarketTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/home/controllers/FriendsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/management/account_types/Producer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/home/fxml/viewcrops.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        <state relative-caret-position="147">
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/home/controllers/CropsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state relative-caret-position="228">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
