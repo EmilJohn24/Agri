@@ -1,6 +1,7 @@
 package market;
 
 import management.Account;
+import management.account_types.Producer;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -21,8 +22,8 @@ class MarketTest {
         testProduct = new Product("Rice");
         testAccount = Account.generateAccount("Emil", "AAA", "Producer");
         secondTestAccount = Account.generateAccount("Teddy", "BBB", "Consumer");
-        testItem = Item.createMarketItem(testProduct, testAccount, 100.0);
-        testItem2 = Item.createMarketItem(testProduct, testAccount, 200.0);
+        testItem = Item.createMarketItem(testProduct, (Producer) testAccount, 100.0);
+        testItem2 = Item.createMarketItem(testProduct, (Producer) testAccount, 200.0);
     }
 
     @org.junit.jupiter.api.Test
