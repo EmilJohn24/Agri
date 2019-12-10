@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2ac0945-1a14-47f8-b66c-4a8630b4cab0" name="Default Changelist" comment="COPIED SIGNIN FXML TO RESERVE&#10;UPDATED RESERVE GUI">
-      <change beforePath="$PROJECT_DIR$/LBYCPA2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LBYCPA2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LBYCPA2/META-INF/LBYCPA2.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LBYCPA2/gui/home/fxml/reserve.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LBYCPA2/gui/home/fxml/reserve.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/home/fxml/reserve.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/home/fxml/reserve.fxml" afterDir="false" />
+    <list default="true" id="e2ac0945-1a14-47f8-b66c-4a8630b4cab0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/home/fxml/viewcrops.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/home/fxml/viewcrops.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575995833142</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="COPIED SIGNIN FXML TO RESERVE&#10;UPDATED RESERVE GUI">
+      <created>1575999015991</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575999015991</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -264,9 +268,18 @@
     <MESSAGE value="Added some functions" />
     <MESSAGE value="Fixed casting error" />
     <MESSAGE value="Added button functionalty" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added button functionalty" />
+    <MESSAGE value="COPIED SIGNIN FXML TO RESERVE&#10;UPDATED RESERVE GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="COPIED SIGNIN FXML TO RESERVE&#10;UPDATED RESERVE GUI" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1575999014733">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1575999014733" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1575999020459">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1575999020459" />
     <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575998935413">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
