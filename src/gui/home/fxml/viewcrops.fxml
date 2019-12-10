@@ -14,7 +14,7 @@
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <ListView fx:id="myProductList" layoutX="13.0" layoutY="34.0" prefHeight="351.0" prefWidth="200.0" />
+      <ListView onMouseClicked="#updateContents" fx:id="myProductList" layoutX="13.0" layoutY="34.0" prefHeight="351.0" prefWidth="200.0" />
       <Label layoutX="235.0" layoutY="14.0" text="Select Action">
          <font>
             <Font name="Segoe UI" size="14.0" />
@@ -34,12 +34,12 @@
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="281.0" layoutY="82.0" text="P0.00">
+      <Label fx:id="priceLabel" layoutX="281.0" layoutY="82.0" text="P0.00">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="370.0" layoutY="107.0" text="0">
+      <Label fx:id="quantityLabel" layoutX="370.0" layoutY="107.0" text="0">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>

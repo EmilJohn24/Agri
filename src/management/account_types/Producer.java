@@ -1,6 +1,7 @@
 package management.account_types;
 
 import management.Account;
+import market.Item;
 import market.Market;
 import market.Product;
 import market.Reservation;
@@ -10,8 +11,8 @@ import java.util.Queue;
 
 public class Producer extends Account {
     private Queue<Reservation> pendingReservations;
-    private ArrayList<Product> productsForSale;
-    private ArrayList<Product> productsStored;
+    private ArrayList<Item> productsForSale;
+    private ArrayList<Item> productsStored;
 
 
     public Producer(String name, String passwordHash) {
@@ -29,9 +30,9 @@ public class Producer extends Account {
     public Reservation peekFrontReservation(){
         return pendingReservations.peek();
     }
-    public void addProductForSale(Product product){
+    public void addProductForSale(Item product){
         productsForSale.add(product);
     }
-    public void addProductInStorage(Product product){ productsStored.add(product);
-    }
+    public void addProductInStorage(Item product){ productsStored.add(product); }
+    public ArrayList<Item> getProductsStored(){return productsStored;}
 }
