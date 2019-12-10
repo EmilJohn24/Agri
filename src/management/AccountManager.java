@@ -41,7 +41,7 @@ public class AccountManager {
         return accounts.get(username);
     }
 
-    public boolean endFriendship(Account initializer, Account removedFriend){
+    public boolean endSubscription(Consumer initializer, Producer removedFriend){
         if (removedFriend != null){
             initializer.removeFriend(removedFriend);
             removedFriend.removeFriend(initializer);
