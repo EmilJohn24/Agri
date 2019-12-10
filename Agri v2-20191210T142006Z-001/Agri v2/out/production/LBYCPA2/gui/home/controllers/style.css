@@ -1,0 +1,22 @@
+.button{
+-fx-background-color: #fff;
+-fx-border-color: #696969;
+-fx-border-width: 0.7px;
+}
+.button:hover{
+-fx-background-color: #dcdcdc;
+}
+.button:pressed{
+-fx-background-color: #c0c0c0;
+}
+
+.button2{
+-fx-background-color: transparent;
+}
+.button2:hover{
+-fx-background-color: transparent;
+}
+.button2:pressed{
+-fx-border-color: #00008b;
+-fx-border-width: 2px;
+}

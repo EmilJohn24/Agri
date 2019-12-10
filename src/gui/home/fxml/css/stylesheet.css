@@ -1,0 +1,52 @@
+.parent{
+	-fx-background-color:transparent;
+}
+
+.pane{
+	-fx-background-color: #4169e1;
+}
+
+.trans-btn-white-border{
+	-fx-background-color:transparent;
+	-fx-background-radius:5px;
+	-fx-border-color:#cccccc;
+	-fx-border-radius:5px;
+	-fx-border-width:1px;
+	-fx-text-fill:whitesmoke;
+}
+
+.white-pane{
+	-fx-background-color:#ffffff;
+}
+
+.tf_box{
+    -fx-text-fill:#c0c0c0;
+	-fx-background-color:transparent;
+	-fx-border-color: #4169e1;
+	-fx-border-width:0px 0px 1px 0px;
+}
+
+.tf{
+	-fx-background-color:transparent;
+	
+}
+
+.pink-btn{
+	-fx-background-color:#4169e1;
+	-fx-backgruond-radius:5px;
+	-fx-text-fill:#ffffff;
+}
+
+.parent{
+    -fx-background-color: #ffffff;
+}
+.txt-fields{
+    -fx-background-color: transparent;
+}
+.vbox{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 3px;
+}
+.txt-color{
+    -fx-text-fill: #999999;
+}

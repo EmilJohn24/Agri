@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.home.controllers.HowToController">
+   <children>
+      <ImageView fitHeight="109.0" fitWidth="200.0" layoutX="200.0" layoutY="117.0">
+         <image>
+            <Image url="@../assets/logonobg.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="278.0" layoutY="52.0" text="Agri">
+         <font>
+            <Font name="Segoe UI" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="96.0" text="Version 2.0" textFill="#919191">
+         <font>
+            <Font name="Segoe UI Light" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="252.0" layoutY="240.0" text="© 2019 LC Utils" textFill="#919191">
+         <font>
+            <Font name="Segoe UI Light" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="244.0" layoutY="270.0" text="All rights reserved" textFill="#919191">
+         <font>
+            <Font name="Segoe UI Light" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

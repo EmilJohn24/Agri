@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER_LEFT" prefHeight="480.0" prefWidth="480.0" styleClass="white-pane" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Login" textFill="ROYALBLUE">
+         <font>
+            <Font name="Segoe UI" size="21.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" left="20.0" right="15.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="455.0" styleClass="tf_box">
+         <children>
+            <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="44.0" prefWidth="481.0" promptText="User Name" styleClass="tf">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></TextField>
+            <FontAwesomeIcon fill="LIGHTGRAY" glyphStyle="-fx-filltd3d3d3" iconName="USER" size="2.0em">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" top="20.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+         </children>
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="253.0" prefHeight="45.0" prefWidth="200.0" styleClass="tf_box">
+         <children>
+            <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="44.0" prefWidth="481.0" promptText="Password" styleClass="tf">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></TextField>
+            <FontAwesomeIcon fill="LIGHTGRAY" glyphStyle="-fx-filltd3d3d3" iconName="LOCK" size="2.0em">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" top="20.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+         </children>
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="200.0" styleClass="tf_box">
+         <VBox.margin>
+            <Insets left="20.0" right="15.0" top="20.0" />
+         </VBox.margin>
+         <children>
+            <JFXButton text="Forgot Password?" textFill="#888787" />
+            <JFXButton prefHeight="39.0" prefWidth="120.0" styleClass="pink-btn" text="Sign In" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>

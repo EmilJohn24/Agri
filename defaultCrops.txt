@@ -1,0 +1,25 @@
+Wheat
+Rice
+Corn
+Potato
+Tomato
+Soybean
+Peanut
+Mung Bean
+Coconut
+Sugar
+Banana
+Mango
+Coffee
+Tobacco
+Abaca
+Cassava
+Camote
+Sweet Potato
+Garlic
+Onion
+Cabbage
+Eggplant
+Calamansi
+Rubber
+Cotton
