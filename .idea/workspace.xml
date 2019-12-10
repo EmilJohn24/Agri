@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2ac0945-1a14-47f8-b66c-4a8630b4cab0" name="Default Changelist" comment="COPIED SIGNIN FXML TO RESERVE">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="e2ac0945-1a14-47f8-b66c-4a8630b4cab0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/home/fxml/reserve.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/home/fxml/reserve.fxml" afterDir="false" />
     </list>
@@ -179,6 +178,14 @@
       <option name="presentableId" value="Default" />
       <updated>1575804415362</updated>
     </task>
+    <task id="LOCAL-00001" summary="COPIED SIGNIN FXML TO RESERVE">
+      <created>1575994506807</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575994506807</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -220,14 +227,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="COPIED SIGNIN FXML TO RESERVE" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1575994461529">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1575994505523">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1575994461529" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1575993206084">
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1575994505523" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1575994518228">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1575993206084" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1575994518228" />
     <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575994358483">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
