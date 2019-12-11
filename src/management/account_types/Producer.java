@@ -1,6 +1,7 @@
 package management.account_types;
 
 import management.Account;
+import map.Point;
 import market.*;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ public class Producer extends Account {
     private Queue<Reservation> pendingReservations;
     private ArrayList<Item> productsForSale;
     private ArrayList<Item> productsStored;
+    private Point farmLocation;
 
 
     public Producer(String name, String passwordHash) {
@@ -60,5 +62,13 @@ public class Producer extends Account {
         Item newItem = transferItem.subtractQuantity(count);
         if (transferItem.getQuantity() <= 0) productsStored.remove(index);
         return newItem;
+    }
+
+    public Point getFarmLocation() {
+        return farmLocation;
+    }
+
+    public void setFarmLocation(Point farmLocation) {
+        this.farmLocation = farmLocation;
     }
 }
