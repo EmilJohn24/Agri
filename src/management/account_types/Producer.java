@@ -11,7 +11,6 @@ public class Producer extends Account {
     private Queue<Reservation> pendingReservations;
     private ArrayList<Item> productsForSale;
     private ArrayList<Item> productsStored;
-    private Point farmLocation;
 
 
     public Producer(String name, String passwordHash) {
@@ -64,11 +63,4 @@ public class Producer extends Account {
         return newItem;
     }
 
-    public Point getFarmLocation() {
-        return farmLocation;
-    }
-
-    public void setFarmLocation(Point farmLocation) {
-        this.farmLocation = farmLocation;
-    }
 }

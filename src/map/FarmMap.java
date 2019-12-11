@@ -75,4 +75,8 @@ public class FarmMap {
     return null;
     }
 
+    public LinkedList<Point> getPoints(){
+        return points;
+    }
+
 }

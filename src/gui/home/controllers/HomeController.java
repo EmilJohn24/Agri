@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import management.Account;
 import management.AccountManager;
@@ -122,4 +123,6 @@ public class HomeController  {
         }
     }
 
+    public void loadMap(MouseEvent mouseEvent) {
+    }
 }

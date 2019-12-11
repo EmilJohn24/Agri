@@ -8,7 +8,7 @@ import java.util.LinkedList;
 public class Point {
     private Double x;
     private Double y;
-    private Producer owner;
+    private Account owner;
     private LinkedList<Point> adjacencyList;
 
     Point(Double x, Double y){
@@ -44,17 +44,24 @@ public class Point {
         setY(y);
     }
 
+    public Double getX(){
+        return this.x;
+    }
+
+    public Double getY(){
+        return this.y;
+    }
+
 
     LinkedList<Point> explore() {
         return adjacencyList;
     }
 
-    public void setOwner(Producer owner) {
+    public void setOwner(Account owner) {
         this.owner = owner;
-        this.owner.setFarmLocation(this);
     }
 
-    public Producer getOwner() {
+    public Account getOwner() {
         return owner;
     }
 }

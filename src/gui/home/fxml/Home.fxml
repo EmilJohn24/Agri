@@ -114,7 +114,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="map" contentDisplay="TOP" mnemonicParsing="false" prefHeight="107.0" prefWidth="311.0" stylesheets="@css/style.css" text="Map" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="map" onMouseClicked="#mapMenu" contentDisplay="TOP" mnemonicParsing="false" prefHeight="107.0" prefWidth="311.0" stylesheets="@css/style.css" text="Map" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <graphic>
                         <ImageView fitHeight="53.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                            <image>
