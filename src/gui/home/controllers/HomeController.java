@@ -8,6 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import management.Account;
+import management.AccountManager;
+import management.GlobalSessionHolder;
+import management.account_types.Consumer;
+import management.account_types.Producer;
 
 import javax.xml.bind.NotIdentifiableEvent;
 import java.io.IOException;
@@ -15,6 +20,14 @@ import java.util.Stack;
 
 public class HomeController  {
 
+    public Button monitor;
+    public Button map;
+    public Button reserve;
+    public Button howTo;
+    public Button friends;
+    public Button buy;
+    public Button sell;
+    public Button crops;
     @FXML
     private AnchorPane display;
 
@@ -92,6 +105,21 @@ public class HomeController  {
         previousMenus = new Stack<>();
         titles = new Stack<>();
         backButton.setDisable(true);
+        accessController();
+    }
+
+    @FXML
+    public void accessController(){
+        if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Consumer){
+            //disables consumer-disabled features
+            sell.setDisable(true);
+            crops.setDisable(true);
+        }
+        else if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Producer){
+            //disables producer-disabled features
+            buy.setDisable(true);
+            friends.setDisable(true);
+        }
     }
 
 }

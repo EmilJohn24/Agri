@@ -47,12 +47,12 @@
                 <Font name="Segoe UI" size="14.0" />
             </font>
         </Label>
-        <Label fx:id="quantityLabel" layoutX="261.0" layoutY="271.0" text="X">
+        <Label layoutX="261.0" layoutY="271.0" text="X">
             <font>
                 <Font name="Segoe UI" size="14.0" />
             </font>
         </Label>
-        <TextField layoutX="278.0" layoutY="268.0" prefHeight="25.0" prefWidth="89.0" />
+        <TextField fx:id="quantityBuyTextField" layoutX="278.0" layoutY="268.0" prefHeight="25.0" prefWidth="89.0" />
         <Label layoutX="371.0" layoutY="272.0" text="kg">
             <font>
                 <Font name="Segoe UI" size="14.0" />
@@ -63,10 +63,11 @@
                 <Font name="Segoe UI" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="218.0" layoutY="304.0" text="P0.00">
+        <Label fx:id="totalPriceLabel" layoutX="218.0" layoutY="304.0" text="P0.00">
             <font>
                 <Font name="Segoe UI" size="14.0" />
             </font>
         </Label>
+        <Button fx:id="submit" layoutX="218.0" layoutY="330.0" text="Buy"/>
     </children>
 </AnchorPane>

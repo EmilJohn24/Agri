@@ -5,10 +5,14 @@ import com.jfoenix.controls.JFXComboBox;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import management.AccountManager;
+import management.GlobalSessionHolder;
+import management.account_types.Consumer;
 import management.account_types.Producer;
 import market.GlobalMarket;
 import market.Item;
@@ -19,34 +23,67 @@ import java.util.LinkedList;
 
 public class BuyController {
     @FXML
-    private Label quantityLabel;
+    private Button submit;
+    @FXML
+    private TextField quantityBuyTextField;
+    @FXML
+    private Label totalPriceLabel;
+//    @FXML
+//    private Label quantityLabel;
     @FXML
     private Label priceLabel;
     @FXML
     private JFXComboBox<String> companyPicker;
     @FXML
     private GridPane cropGrid;
+
     private Product productPicked;
     private Producer companyPicked;
     private Item pendingSale;
+    private Integer pendingQuantity;
     private ArrayList<Producer> producersWithProductPicked;
     private final int ROWS = 5;
     private final int COLS = 5;
 
     private void updateLabels(){
-        quantityLabel.setText(String.valueOf(pendingSale.getQuantity()));
-        priceLabel.setText(String.valueOf(pendingSale.getQuantity()));
+//        quantityLabel.setText(String.valueOf(pendingSale.getQuantity()));
+        priceLabel.setText(String.valueOf(pendingSale.getPrice()));
+        priceUpdate();
+    }
+
+    private Double getPendingTotalPrice(){
+        return pendingSale.getPrice() * pendingQuantity;
+    }
+    private void priceUpdate(){
+        totalPriceLabel.setText(String.valueOf(getPendingTotalPrice()));
+    }
+
+    public void buyOperation(){
+        Consumer customer = (Consumer) GlobalSessionHolder.currentSession.getSessionAccount();
+        customer.addItemBought(pendingSale.subtractQuantity(pendingQuantity));
     }
     @FXML
     public void initialize(){
+        pendingQuantity = 0;
         producersWithProductPicked = new ArrayList<>();
+        initializeButtons();
+        initializeGrid();
+    }
+
+    private void initializeButtons() {
         companyPicker.setOnAction(event -> {
             companyPicked = producersWithProductPicked.get(companyPicker.getSelectionModel().getSelectedIndex());
             pendingSale = companyPicked.getItemInSale(productPicked);
             updateLabels();
 
         });
-        initializeGrid();
+        quantityBuyTextField.setOnAction(event -> {
+            //TODO: Check if there are enough stocks
+            pendingQuantity =  Integer.valueOf(quantityBuyTextField.getText());
+            priceUpdate();
+        });
+
+        submit.setOnMouseClicked(event -> buyOperation());
     }
 
     private void loadCompanies(){
