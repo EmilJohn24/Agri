@@ -41,7 +41,7 @@
                 <Font name="Segoe UI" size="14.0" />
             </font>
         </Label>
-        <JFXComboBox layoutX="218.0" layoutY="229.0" prefHeight="25.0" prefWidth="173.0" promptText="Select Company" />
+        <JFXComboBox fx:id="selectedCompany" layoutX="218.0" layoutY="229.0" prefHeight="25.0" prefWidth="173.0" promptText="Select Company" />
         <Label layoutX="153.0" layoutY="272.0" text="Quantity:">
             <font>
                 <Font name="Segoe UI" size="14.0" />
@@ -68,12 +68,12 @@
                 <Font name="Segoe UI" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="218.0" layoutY="368.0" text="P0.00">
+        <Label fx:id="priceLabel" layoutX="218.0" layoutY="368.0" text="P0.00">
             <font>
                 <Font name="Segoe UI" size="14.0" />
             </font>
         </Label>
-      <JFXDatePicker defaultColor="#698efd" layoutX="215.0" layoutY="327.0" />
+      <JFXDatePicker fx:id="datePicker" defaultColor="#698efd" layoutX="215.0" layoutY="327.0" />
       <Label layoutX="139.0" layoutY="332.0" text="Claim Date:">
          <font>
             <Font name="Segoe UI" size="14.0" />
