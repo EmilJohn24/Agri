@@ -22,7 +22,6 @@ public class Item {
     public static Item createMarketItem(Product product, Producer seller, Double price, Integer quantity){
         Item newMarketItem = new Item(product, seller, price, quantity);
         Product.addNewItem(product.getName(), newMarketItem);
-        seller.addProductForSale(newMarketItem);
         return newMarketItem;
     }
 

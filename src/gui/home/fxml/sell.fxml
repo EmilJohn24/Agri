@@ -13,7 +13,7 @@
             <Font name="Segoe UI" size="15.0" />
          </font>
       </Label>
-      <ListView layoutX="14.0" layoutY="71.0" prefHeight="313.0" prefWidth="200.0" />
+      <ListView fx:id="cropsInStockView" layoutX="14.0" layoutY="71.0" prefHeight="313.0" prefWidth="200.0" />
       <Label layoutX="77.0" layoutY="46.0" text="Your Crops">
          <font>
             <Font name="Segoe UI" size="15.0" />
@@ -24,8 +24,8 @@
             <Font name="Segoe UI" size="15.0" />
          </font>
       </Label>
-      <ListView layoutX="386.0" layoutY="71.0" prefHeight="124.0" prefWidth="200.0" />
-      <Button layoutX="222.0" layoutY="82.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" stylesheets="@css/style.css" text="Add to Marketplace">
+      <ListView fx:id="cropsForSale" layoutX="386.0" layoutY="71.0" prefHeight="124.0" prefWidth="200.0" />
+      <Button fx:id="addToMarketButton" layoutX="222.0" layoutY="82.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" stylesheets="@css/style.css" text="Add to Marketplace">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font>
@@ -40,22 +40,22 @@
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="315.0" layoutY="231.0" text="P0.00">
+      <Label fx:id="priceLabel" layoutX="315.0" layoutY="231.0" text="P0.00">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="349.0" layoutY="282.0" text="0">
+      <Label fx:id="quantityLabel" layoutX="349.0" layoutY="282.0" text="0">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="221.0" layoutY="166.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Remove from Marketplace" textFill="#eb0d0d">
+      <Button fx:id="removeFromMarketButton" layoutX="221.0" layoutY="166.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Remove from Marketplace" textFill="#eb0d0d">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="221.0" layoutY="125.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" stylesheets="@css/style.css" text="Update Current Product">
+      <Button fx:id="updateCurrentProductButton" layoutX="221.0" layoutY="125.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" stylesheets="@css/style.css" text="Update Current Product">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font>
