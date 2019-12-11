@@ -1,6 +1,7 @@
 package management.account_types;
 
 import management.Account;
+import map.Point;
 import market.*;
 
 import java.util.ArrayList;
@@ -61,4 +62,5 @@ public class Producer extends Account {
         if (transferItem.getQuantity() <= 0) productsStored.remove(index);
         return newItem;
     }
+
 }

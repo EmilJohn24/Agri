@@ -2,6 +2,7 @@ package management;
 
 import management.account_types.Consumer;
 import management.account_types.Producer;
+import map.Point;
 import market.Reservation;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class Account {
     private ArrayList<Session> sessions;
     private String name;
     private String passwordHash;
+    private Point farmLocation;
 
 
     private static String hash(String password){
@@ -56,4 +58,13 @@ public class Account {
         this.name = name;
     }
 
+    public Point getFarmLocation() {
+        return farmLocation;
+    }
+
+
+    public void setFarmLocation(Point farmLocation) {
+        this.farmLocation = farmLocation;
+        this.farmLocation.setOwner(this);
+    }
 }
