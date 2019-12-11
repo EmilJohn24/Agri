@@ -28,9 +28,29 @@ public class SellController {
 
     private Producer currentAccount;
 
+    private void updateLabels(){
+        int stockUpdateIndex = cropsInStockView.getSelectionModel().getSelectedIndices().get(0);
+        int saleUpdateIndex = cropsForSale.getSelectionModel().getSelectedIndices().get(0);
+        String quantityString, priceString;
+        if (stockUpdateIndex >= 0) {
+            priceString = String.valueOf(currentAccount.getProductsStored().get(stockUpdateIndex).getPrice());
+            quantityString = String.valueOf(currentAccount.getProductsStored().get(stockUpdateIndex).getQuantity());
+        }
+        else if (saleUpdateIndex >= 0){
+            priceString = String.valueOf(currentAccount.getProductsForSale().get(saleUpdateIndex).getPrice());
+            quantityString = String.valueOf(currentAccount.getProductsForSale().get(saleUpdateIndex).getQuantity());
+        }else{
+
+            priceString = "0.00";
+            quantityString = "0";
+        }
+        priceLabel.setText(priceString);
+        quantityLabel.setText(quantityString);
+    }
     private void updateCrops(){
         loadCropsInStock();
         loadCropsForSale();
+        updateLabels();
     }
     private void loadCropsInStock(){
         cropsInStockView.getItems().clear();
@@ -57,13 +77,13 @@ public class SellController {
 
     private void removeFromMarket(){
         for (Integer index : cropsForSale.getSelectionModel().getSelectedIndices()){
-            currentAccount.addProductInStorage(currentAccount.transferItemFromSales(index, currentAccount.getProductsStored().get(index).getQuantity()));
+            currentAccount.addProductInStorage(currentAccount.transferItemFromSales(index, currentAccount.getProductsForSale().get(index).getQuantity()));
         }
         updateCrops();
     }
 
     private void updateCurrentProduct(){
-
+        //TODO: Ano ginagawa nito?
     }
 
 
@@ -72,6 +92,8 @@ public class SellController {
         addToMarketButton.setOnMouseClicked(event -> addToMarket());
         removeFromMarketButton.setOnMouseClicked(event -> removeFromMarket());
         updateCurrentProductButton.setOnMouseClicked(event -> updateCurrentProduct());
+        cropsForSale.setOnMouseClicked(event -> updateLabels());
+        cropsInStockView.setOnMouseClicked(event -> updateLabels());
     }
 
 
