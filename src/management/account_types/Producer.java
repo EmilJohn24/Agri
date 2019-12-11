@@ -27,13 +27,27 @@ public class Producer extends Account {
     public Reservation peekFrontReservation(){
         return pendingReservations.peek();
     }
+
     public void addProductForSale(Item product){
         GlobalMarket.getGlobalMarket().addMarketItem(product);
         productsForSale.add(product);
     }
+
     public void addProductInStorage(Item product){ productsStored.add(product); }
     public ArrayList<Item> getProductsStored(){return productsStored;}
     public ArrayList<Item> getProductsForSale(){return productsForSale;}
+
+    public Item getItemInSale(Product product){
+        for (Item i : productsForSale){
+            if (i.getProduct() == product) return i;
+        }
+        return null;
+    }
+
+    public boolean hasProductInSale(Product product){
+        return getItemInSale(product) != null;
+    }
+
     public Item transferItemFromSales(int index, int count){
         Item transferItem = productsForSale.get(index);
         Item backItem = transferItem.subtractQuantity(count);

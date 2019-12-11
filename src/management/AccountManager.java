@@ -2,8 +2,11 @@ package management;
 
 import management.account_types.Consumer;
 import management.account_types.Producer;
+import market.Product;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Map;
 
 //singleton model
 public class AccountManager {
@@ -24,8 +27,30 @@ public class AccountManager {
 
     static{
         globalAccManager = setupAccountManager();
+        globalAccManager.makeCompanyAccounts();
+    }
+
+    private void makeCompanyAccounts(){
+        this.addUser("Purefoods", "admin", AccountManager.PRODUCER_ID);
+        this.addUser("Bounty Farms", "admin", AccountManager.PRODUCER_ID);
+        this.addUser("Solis Farm", "admin", AccountManager.PRODUCER_ID);
+        this.addUser("Coteok's Farm", "admin", AccountManager.PRODUCER_ID);
+        this.addUser("Family Farm", "admin", AccountManager.PRODUCER_ID);
+
+
+
     }
     private Hashtable<String, Account> accounts;
+
+    public ArrayList<Producer> getProducersWith(Product product){
+        ArrayList<Producer> out = new ArrayList<>();
+        for (Account acc : accounts.values()){
+            if (acc instanceof Producer){
+                if (((Producer) acc).hasProductInSale(product)) out.add((Producer) acc);
+            }
+        }
+        return out;
+    }
 
     private AccountManager(){
         accounts = new Hashtable<>();
