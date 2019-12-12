@@ -22,7 +22,7 @@ public class Reservation {
         this.amount = amount;
     }
 
-    public void setDate(LocalDate date) {
+    private void setDate(LocalDate date) {
         this.date = date;
     }
 

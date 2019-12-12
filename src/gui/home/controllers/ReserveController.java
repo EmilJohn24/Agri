@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -125,6 +126,10 @@ public class ReserveController {
     public void reserveAction(MouseEvent mouseEvent) {
         Reservation newReservation = new Reservation(companyPicked,
                 GlobalSessionHolder.currentSession.getSessionAccount(), pendingLocalDate, productPicked, pendingQuantity);
-        GlobalMarket.getGlobalMarket().addReservation(newReservation);
+        companyPicked.requestReservation(newReservation);
+        Alert newAlert = new Alert(Alert.AlertType.INFORMATION);
+        newAlert.setTitle("Reservation complete");
+        newAlert.setContentText("Reservation is now pending.");
+        newAlert.showAndWait();
     }
 }

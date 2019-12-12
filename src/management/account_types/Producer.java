@@ -5,6 +5,7 @@ import map.Point;
 import market.*;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class Producer extends Account {
@@ -17,6 +18,7 @@ public class Producer extends Account {
         super(name, passwordHash);
         productsForSale = new ArrayList<>();
         productsStored = new ArrayList<>();
+        pendingReservations = new LinkedList<>();
     }
 
     public void requestReservation(Reservation reservation){
@@ -28,7 +30,8 @@ public class Producer extends Account {
     public Reservation peekFrontReservation(){
         return pendingReservations.peek();
     }
-
+    public boolean hasReservations(){ return !pendingReservations.isEmpty(); }
+    public void removeFrontReservation(){ pendingReservations.remove(); }
     public void addProductForSale(Item product){
         GlobalMarket.getGlobalMarket().addMarketItem(product);
         productsForSale.add(product);
