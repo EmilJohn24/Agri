@@ -51,6 +51,15 @@ public class AccountManager {
         }
         return out;
     }
+    public ArrayList<Producer> getProducersWithStored(Product product){
+        ArrayList<Producer> out = new ArrayList<>();
+        for (Account acc : accounts.values()){
+            if (acc instanceof Producer){
+                if (((Producer) acc).hasProductInStorage(product)) out.add((Producer) acc);
+            }
+        }
+        return out;
+    }
 
     private AccountManager(){
         accounts = new Hashtable<>();

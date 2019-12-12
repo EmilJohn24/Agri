@@ -45,6 +45,13 @@ public class Producer extends Account {
         return null;
     }
 
+    public Item getItemInStorage(Product product){
+        for (Item i : productsStored){
+            if (i.getProduct() == product) return i;
+        }
+        return null;
+    }
+
     public boolean hasProductInSale(Product product){
         return getItemInSale(product) != null;
     }
@@ -63,4 +70,7 @@ public class Producer extends Account {
         return newItem;
     }
 
+    public boolean hasProductInStorage(Product product) {
+        return getItemInStorage(product) != null;
+    }
 }

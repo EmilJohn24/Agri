@@ -28,8 +28,6 @@ public class BuyController {
     private TextField quantityBuyTextField;
     @FXML
     private Label totalPriceLabel;
-//    @FXML
-//    private Label quantityLabel;
     @FXML
     private Label priceLabel;
     @FXML
