@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LBYCPA2.iml" filepath="$PROJECT_DIR$/LBYCPA2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Agri.iml" filepath="$PROJECT_DIR$/.idea/Agri.iml" />
     </modules>
   </component>
 </project>

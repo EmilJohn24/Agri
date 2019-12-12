@@ -1,5 +1,8 @@
 package gui.home.controllers;
 
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import gui.home.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,6 +46,8 @@ public class HomeController {
 
     @FXML
     private Button backButton;
+    private JFXHamburger sideButton;
+    private JFXDrawer drawer;
     private Stack<Node> previousMenus;
     private Stack<String> titles;
 
@@ -87,6 +92,18 @@ public class HomeController {
 
     public void mapMenu() throws IOException {
         load("map.fxml", "Map ");
+    }
+
+    public void drawButton() throws IOException {
+        HamburgerBackArrowBasicTransition backButton = new HamburgerBackArrowBasicTransition(sideButton);
+        load("sidebar.fxml", "Main Menu");
+        backButton.setRate(-1);
+        sideButton.addEventHandler(MouseEvent.MOUSE_PRESSED,(e)-> {
+            backButton.setRate(backButton.getRate() * -1);
+            backButton.play();
+            //drawer.draw();
+            //drawer.hide();
+        });
     }
 
 
