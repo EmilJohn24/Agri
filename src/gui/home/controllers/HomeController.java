@@ -5,21 +5,27 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import management.Account;
 import management.AccountManager;
 import management.GlobalSessionHolder;
+import management.Session;
 import management.account_types.Consumer;
 import management.account_types.Producer;
+import market.GlobalMarket;
+import market.Reservation;
 
 import javax.xml.bind.NotIdentifiableEvent;
 import java.io.IOException;
+import java.util.Optional;
 import java.util.Stack;
 
-public class HomeController  {
+public class HomeController {
 
     public Button monitor;
     public Button map;
@@ -46,7 +52,7 @@ public class HomeController  {
         if (previousMenus.empty()) backButton.setDisable(true);
     }
 
-    private void changeTitle(String name){
+    private void changeTitle(String name) {
         titles.push(title.getText());
         title.setText(name);
     }
@@ -102,27 +108,55 @@ public class HomeController  {
     }
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         previousMenus = new Stack<>();
         titles = new Stack<>();
         backButton.setDisable(true);
         accessController();
     }
 
-    @FXML
-    public void accessController(){
-        if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Consumer){
-            //disables consumer-disabled features
-            sell.setDisable(true);
-            crops.setDisable(true);
-        }
-        else if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Producer){
-            //disables producer-disabled features
-            buy.setDisable(true);
-            friends.setDisable(true);
+
+    private void alertReservationsPending() {
+        Producer userAccountProducerAdapter = (Producer) GlobalSessionHolder.currentSession.getSessionAccount();
+        while (userAccountProducerAdapter.hasReservations()) {
+            Reservation currentReservation = userAccountProducerAdapter.peekFrontReservation();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Reservation for: " + currentReservation.getBuyer().getName());
+            alert.setHeaderText("Requested Crop: " + currentReservation.getProduct().getName());
+            alert.setContentText("Name: " + currentReservation.getBuyer().getName() +
+                    "\nAmount: " + currentReservation.getAmount());
+
+            ButtonType buttonTypeOne = new ButtonType("Yes");
+            ButtonType buttonTypeTwo = new ButtonType("No");
+
+            alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == buttonTypeOne) {
+                // ... user chose "One"
+                userAccountProducerAdapter.addFrontReservationTo(GlobalMarket.getGlobalMarket());
+            } else if (result.get() == buttonTypeTwo) {
+                // ... user chose "Two"
+                userAccountProducerAdapter.removeFrontReservation();
+
+
+            }
         }
     }
 
-    public void loadMap(MouseEvent mouseEvent) {
+        public void accessController(){
+            if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Consumer) {
+                //disables consumer-disabled features
+                sell.setDisable(true);
+                crops.setDisable(true);
+            } else if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Producer) {
+                //disables producer-disabled features
+                buy.setDisable(true);
+                friends.setDisable(true);
+                alertReservationsPending();
+            }
+        }
+
+        public void loadMap (MouseEvent mouseEvent){
+        }
     }
-}

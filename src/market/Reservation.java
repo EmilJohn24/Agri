@@ -14,7 +14,7 @@ public class Reservation {
     private Product product;
     private Integer amount;
 
-    Reservation(@NotNull Account seller, @NotNull Account buyer, @NotNull LocalDate date,@NotNull Product product,@NotNull Integer amount) {
+    public Reservation(@NotNull Account seller, @NotNull Account buyer, @NotNull LocalDate date,@NotNull Product product,@NotNull Integer amount) {
         this.seller = seller;
         this.buyer = buyer;
         this.date = date;
@@ -22,7 +22,7 @@ public class Reservation {
         this.amount = amount;
     }
 
-    public void setDate(LocalDate date) {
+    private void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -44,5 +44,13 @@ public class Reservation {
 
     public Account getBuyer() {
         return buyer;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

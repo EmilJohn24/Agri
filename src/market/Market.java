@@ -36,7 +36,6 @@ public class Market {
         getMarketList(itemProduct).add(item);
     }
 
-
     public void addMarketItem(Product product, Item item){
         getMarketList(product).add(item);
         item.setProduct(product);
