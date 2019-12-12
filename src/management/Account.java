@@ -6,10 +6,11 @@ import map.Point;
 import market.Reservation;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 
 public class Account {
-    private ArrayList<Account> friends;
+    private List<Account> friends;
     private ArrayList<Session> sessions;
     private String name;
     private String passwordHash;
@@ -46,7 +47,7 @@ public class Account {
     public void removeFriend(Account acc) {  friends.remove(acc); }
 
 
-    public final ArrayList<Account> getFriends(){
+    public final List<Account> getFriends(){
         return friends;
     }
 

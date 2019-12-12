@@ -9,6 +9,7 @@ import management.account_types.Producer;
 import market.Item;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SellController {
     @FXML
@@ -54,7 +55,7 @@ public class SellController {
     }
     private void loadCropsInStock(){
         cropsInStockView.getItems().clear();
-        ArrayList<Item> accountItems = currentAccount.getProductsStored();
+        List<Item> accountItems = currentAccount.getProductsStored();
         for (Item i : accountItems){
             cropsInStockView.getItems().add(i.getProduct().getName());
         }
@@ -62,7 +63,7 @@ public class SellController {
 
     private void loadCropsForSale(){
         cropsForSale.getItems().clear();
-        ArrayList<Item> saleItems = currentAccount.getProductsForSale();
+        List<Item> saleItems = currentAccount.getProductsForSale();
         for (Item i : saleItems){
             cropsForSale.getItems().add(i.getProduct().getName());
         }

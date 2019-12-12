@@ -3,20 +3,21 @@ package management.account_types;
 import management.Account;
 import market.Item;
 import market.Product;
+import objects.list.List;
 
 import java.util.ArrayList;
 
 public class Consumer extends Account {
-    private ArrayList<Item> itemsBought;
+    private List<Item> itemsBought;
     public Consumer(String name, String passwordHash) {
         super(name, passwordHash);
-        itemsBought = new ArrayList<>();
+        itemsBought = new List<>();
     }
     public void addItemBought(Item item){
         itemsBought.add(item);
     }
 
-    public final ArrayList<Item> getItemsBought(){
+    public final List<Item> getItemsBought(){
         return itemsBought;
     }
 }

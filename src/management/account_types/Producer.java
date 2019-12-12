@@ -6,12 +6,13 @@ import market.*;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Producer extends Account {
     private Queue<Reservation> pendingReservations;
-    private ArrayList<Item> productsForSale;
-    private ArrayList<Item> productsStored;
+    private List<Item> productsForSale;
+    private List<Item> productsStored;
 
 
     public Producer(String name, String passwordHash) {
@@ -38,8 +39,8 @@ public class Producer extends Account {
     }
 
     public void addProductInStorage(Item product){ productsStored.add(product); }
-    public ArrayList<Item> getProductsStored(){return productsStored;}
-    public ArrayList<Item> getProductsForSale(){return productsForSale;}
+    public List<Item> getProductsStored(){return productsStored;}
+    public List<Item> getProductsForSale(){return productsForSale;}
 
     public Item getItemInSale(Product product){
         for (Item i : productsForSale){

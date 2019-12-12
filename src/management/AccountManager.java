@@ -36,10 +36,8 @@ public class AccountManager {
         this.addUser("Solis Farm", "admin", AccountManager.PRODUCER_ID);
         this.addUser("Coteok's Farm", "admin", AccountManager.PRODUCER_ID);
         this.addUser("Family Farm", "admin", AccountManager.PRODUCER_ID);
-
-
-
     }
+
     private Hashtable<String, Account> accounts;
 
     public ArrayList<Producer> getProducersWith(Product product){
