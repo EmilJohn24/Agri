@@ -96,13 +96,13 @@ public class HomeController {
 
     public void drawButton() throws IOException {
         HamburgerBackArrowBasicTransition backButton = new HamburgerBackArrowBasicTransition(sideButton);
-        load("sidebar.fxml", "Main Menu");
+        //load("sidebar.fxml", "Main Menu");
         backButton.setRate(-1);
         sideButton.addEventHandler(MouseEvent.MOUSE_PRESSED,(e)-> {
             backButton.setRate(backButton.getRate() * -1);
             backButton.play();
-            //drawer.draw();
-            //drawer.hide();
+            if(drawer.isShown()) drawer.close();
+            else drawer.open();
         });
     }
 
