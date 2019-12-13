@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import gui.home.Main;
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,6 +16,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 import management.Account;
 import management.AccountManager;
 import management.GlobalSessionHolder;
@@ -38,6 +41,9 @@ public class HomeController {
     public Button buy;
     public Button sell;
     public Button crops;
+    public Button backButton;
+    public Button logout;
+
     @FXML
     private AnchorPane display;
 
@@ -45,9 +51,6 @@ public class HomeController {
     private Label title;
 
     @FXML
-    private Button backButton;
-    private JFXHamburger sideButton;
-    private JFXDrawer drawer;
     private Stack<Node> previousMenus;
     private Stack<String> titles;
 
@@ -94,18 +97,9 @@ public class HomeController {
         load("map.fxml", "Map ");
     }
 
-    public void drawButton() throws IOException {
-        HamburgerBackArrowBasicTransition backButton = new HamburgerBackArrowBasicTransition(sideButton);
-        //load("sidebar.fxml", "Main Menu");
-        backButton.setRate(-1);
-        sideButton.addEventHandler(MouseEvent.MOUSE_PRESSED,(e)-> {
-            backButton.setRate(backButton.getRate() * -1);
-            backButton.play();
-            if(drawer.isShown()) drawer.close();
-            else drawer.open();
-        });
-    }
+    public void logoutButton(){
 
+    }
 
     private void load(String filename, String title) throws IOException {
         loadDisplay(filename);
