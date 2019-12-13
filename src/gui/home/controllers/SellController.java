@@ -71,7 +71,11 @@ public class SellController {
 
     private void addToMarket(){
         for (Integer index : cropsInStockView.getSelectionModel().getSelectedIndices()) {
-            currentAccount.addProductForSale(currentAccount.transferItem(index, currentAccount.getProductsStored().get(index).getQuantity()));
+            Item transferItem = currentAccount.transferItem(index, currentAccount.getProductsStored().get(index).getQuantity());
+            currentAccount.addProductForSale(transferItem);
+            Producer currentAccountProducerAdaptor = currentAccount;
+            currentAccountProducerAdaptor.notifyAllSubscribers("We are now selling " + transferItem.getProduct().getName() + " at" +
+                    " Php " + transferItem.getPrice());
         }
         updateCrops();
     }

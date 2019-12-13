@@ -82,7 +82,11 @@ public class CropsController {
 
     public void addProduct(MouseEvent mouseEvent) {
         Product productToBeAdded = productAccess.get(selectProductCB.getSelectionModel().getSelectedItem());
-        currentAccount.addProductInStorage(Item.createMarketItem(productToBeAdded, currentAccount, askForPrice(), 0));
+        Item newItem = Item.createMarketItem(productToBeAdded, currentAccount, askForPrice(), 0);
+        currentAccount.addProductInStorage(newItem);
+        Producer currentAccountProducerAdaptor = currentAccount;
+        currentAccountProducerAdaptor.notifyAllSubscribers( "You can now reserve  " + newItem.getProduct().getName() + " at" +
+                " Php " + newItem.getPrice());
         updateList();
     }
 

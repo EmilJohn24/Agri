@@ -23,9 +23,16 @@ public class Producer extends Account {
         productsStored = new List<>();
         pendingReservations = new LinkedList<>();
         officialReservations = new List<>();
-
     }
 
+    public void notifyAllSubscribers(String text){
+        for (Account subscribers : getFriends()){
+            if (subscribers instanceof Consumer){
+                Consumer subscriber = (Consumer) subscribers;
+                subscriber.addNotification(text);
+            }
+        }
+    }
     public void requestReservation(Reservation reservation){
         pendingReservations.add(reservation);
     }

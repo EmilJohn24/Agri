@@ -3,6 +3,7 @@ package gui.home.controllers;
 import com.jfoenix.controls.JFXListView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
 import management.Account;
@@ -17,10 +18,12 @@ import java.util.Optional;
 
 public class FriendsController {
     public JFXListView<String> subscriptionList;
+    public Label subscriptionCount;
     private SubscriptionTree subscriptionTree;
     private List<Producer> temporarySubscriptionList;
 
     private void loadSubscriptions(){
+        subscriptionCount.setText("" + GlobalSessionHolder.currentSession.getSessionAccount().getFriends().size());
         for (Account acc : GlobalSessionHolder.currentSession.getSessionAccount().getFriends()){
             if (acc instanceof Producer){
                 subscriptionList.getItems().add(acc.getName());
@@ -58,6 +61,7 @@ public class FriendsController {
     }
 
     public void viewSubscription(MouseEvent mouseEvent) {
+
     }
 
     @FXML
