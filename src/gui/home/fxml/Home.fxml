@@ -28,13 +28,13 @@
                </graphic>
             </Button>
             <JFXHamburger fx:id="hamburger" layoutX="1212.0" layoutY="110.0" prefHeight="43.0" prefWidth="45.0" styleClass="jfx-hamburger" stylesheets="@css/style.css" />
-            <JFXDrawer fx:id="drawer" defaultDrawerSize="190.0" direction="TOP" layoutX="1121.0" layoutY="148.0" prefHeight="440.0" prefWidth="160.0">
+            <JFXDrawer fx:id="drawer" defaultDrawerSize="190.0" direction="RIGHT" layoutX="1121.0" layoutY="148.0" prefHeight="323.0" prefWidth="160.0">
                <children>
                   <VBox fx:id="box" prefHeight="481.0" prefWidth="160.0">
                      <children>
-                        <Button fx:id="buy1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#buyMenu" prefHeight="55.0" prefWidth="160.0" stylesheets="@css/style.css" text="Buy" textFill="DIMGRAY">
+                        <Button fx:id="buy1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#buyMenu" prefHeight="40.0" prefWidth="160.0" stylesheets="@css/style.css" text="Buy" textFill="DIMGRAY">
                            <graphic>
-                              <ImageView fitHeight="42.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/buy.png" />
                                  </image>
@@ -44,9 +44,9 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="sell1" contentDisplay="TOP" mnemonicParsing="false" onMousePressed="#sellMenu" prefHeight="55.0" prefWidth="160.0" stylesheets="@css/style.css" text="Sell" textFill="DIMGRAY">
+                        <Button fx:id="sell1" contentDisplay="TOP" mnemonicParsing="false" onMousePressed="#sellMenu" prefHeight="40.0" prefWidth="160.0" stylesheets="@css/style.css" text="Sell" textFill="DIMGRAY">
                            <graphic>
-                              <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="27.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/sell.png" />
                                  </image>
@@ -56,33 +56,33 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="reserve1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#reserveMenu" prefHeight="55.0" prefWidth="160.0" stylesheets="@css/style.css" text="Reserve" textFill="DIMGRAY">
+                        <Button fx:id="reserve1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#reserveMenu" prefHeight="40.0" prefWidth="160.0" stylesheets="@css/style.css" text="Reserve" textFill="DIMGRAY">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <graphic>
-                              <ImageView fitHeight="33.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/reserve.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="crops1" contentDisplay="TOP" mnemonicParsing="false" onKeyPressed="#viewCrops" onMouseClicked="#viewCrops" prefHeight="55.0" prefWidth="160.0" stylesheets="@css/style.css" text="Crops" textFill="DIMGRAY">
+                        <Button fx:id="crops1" contentDisplay="TOP" mnemonicParsing="false" onKeyPressed="#viewCrops" onMouseClicked="#viewCrops" prefHeight="40.0" prefWidth="160.0" stylesheets="@css/style.css" text="Crops" textFill="DIMGRAY">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <graphic>
-                              <ImageView fitHeight="43.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/crops.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="friends1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#friendsMenu" prefHeight="55.0" prefWidth="160.0" stylesheets="@css/style.css" text="Subscription" textFill="DIMGRAY">
+                        <Button fx:id="friends1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#friendsMenu" prefHeight="40.0" prefWidth="160.0" stylesheets="@css/style.css" text="Subscription" textFill="DIMGRAY">
                            <graphic>
-                              <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/friend.png" />
                                  </image>
@@ -92,9 +92,9 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="map1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#mapMenu" prefHeight="55.0" prefWidth="160.0" stylesheets="@css/style.css" text="Transactions" textFill="DIMGRAY">
+                        <Button fx:id="map1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#mapMenu" prefHeight="40.0" prefWidth="160.0" stylesheets="@css/style.css" text="Transactions" textFill="DIMGRAY">
                            <graphic>
-                              <ImageView fitHeight="38.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/receipt.png" />
                                  </image>
@@ -104,24 +104,24 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="monitor1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#monitorMenu" prefHeight="55.0" prefWidth="160.0" stylesheets="@css/style.css" text="Monitor" textFill="DIMGRAY">
+                        <Button fx:id="monitor1" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#monitorMenu" prefHeight="40.0" prefWidth="160.0" stylesheets="@css/style.css" text="Monitor" textFill="DIMGRAY">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <graphic>
-                              <ImageView fitHeight="43.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/monitor.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="howTo1" contentDisplay="TOP" mnemonicParsing="false" onMousePressed="#howToUseApp" prefHeight="55.0" prefWidth="160.0" stylesheets="@css/style.css" text="About" textFill="DIMGRAY">
+                        <Button fx:id="howTo1" contentDisplay="TOP" mnemonicParsing="false" onMousePressed="#howToUseApp" prefHeight="40.0" prefWidth="160.0" stylesheets="@css/style.css" text="About" textFill="DIMGRAY">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <graphic>
-                              <ImageView fitHeight="41.0" fitWidth="42.0" onMouseClicked="#howToUseApp" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="28.0" fitWidth="34.0" onMouseClicked="#howToUseApp" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/howto.png" />
                                  </image>
