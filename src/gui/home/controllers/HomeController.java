@@ -8,6 +8,7 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
@@ -16,6 +17,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import management.Account;
@@ -30,10 +32,12 @@ import market.Reservation;
 import javax.swing.*;
 import javax.xml.bind.NotIdentifiableEvent;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 import java.util.Stack;
 
-public class HomeController {
+public class HomeController implements Initializable {
 
     public Button monitor;
     public Button map;
@@ -44,10 +48,19 @@ public class HomeController {
     public Button sell;
     public Button crops;
     public Button backButton;
-    public Button logout;
 
     @FXML
     private AnchorPane display;
+    private AnchorPane anchorPane;
+
+    @FXML
+    private JFXHamburger hamburger;
+
+    @FXML
+    private VBox box;
+
+    @FXML
+    private JFXDrawer drawer;
 
     @FXML
     private Label title;
@@ -121,13 +134,6 @@ public class HomeController {
         display.getChildren().add(node);
     }
 
-    @FXML
-    public void initialize() {
-        previousMenus = new Stack<>();
-        titles = new Stack<>();
-        backButton.setDisable(true);
-        accessController();
-    }
 
 
     private void alertReservationsPending() {
@@ -178,4 +184,23 @@ public class HomeController {
             alertReservationsPending();
         }
     }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        previousMenus = new Stack<>();
+        titles = new Stack<>();
+        backButton.setDisable(true);
+        accessController();
+        HamburgerBackArrowBasicTransition burgerTask2 = new HamburgerBackArrowBasicTransition(hamburger);
+        burgerTask2.setRate(-1);
+        hamburger.addEventHandler(MouseEvent.MOUSE_PRESSED, (e) -> {
+            burgerTask2.setRate(burgerTask2.getRate() * -1);
+            burgerTask2.play();
+            if(drawer.isShown()) drawer.close();
+            else drawer.open();
+        });
+        drawer.setSidePane(box);
+
     }
+
+}

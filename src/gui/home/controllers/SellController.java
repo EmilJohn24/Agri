@@ -1,9 +1,16 @@
 package gui.home.controllers;
 
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import management.GlobalSessionHolder;
 import management.account_types.Producer;
 import market.GlobalMarket;
@@ -11,7 +18,9 @@ import market.Item;
 import market.Product;
 import objects.list.List;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class SellController {
     @FXML
@@ -30,6 +39,12 @@ public class SellController {
     private Label quantityLabel;
     @FXML
     private Producer currentAccount;
+    @FXML
+    private AnchorPane anchorPane;
+    @FXML
+    private JFXHamburger hamburger;
+    @FXML
+    private JFXDrawer drawer;
 
     private void updateLabels(){
         int stockUpdateIndex = cropsInStockView.getSelectionModel().getSelectedIndices().get(0);
