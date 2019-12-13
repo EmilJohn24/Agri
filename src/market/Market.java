@@ -16,6 +16,17 @@ public class Market {
         officialReservations = new LinkedList<>();
     }
 
+    public Double getRecommendedPriceFor(Product p){
+        LinkedList<Item> productItems = sales.get(p);
+        Double cumPrice = 0.0;
+        Double cumQuantity = 0.0;
+        for (Item i : productItems){
+            cumPrice += i.getPrice() * i.getQuantity();
+            cumQuantity = i.getQuantity().doubleValue();
+        }
+        return cumPrice / cumQuantity;
+    }
+
     public LinkedList<Item> getMarketList(Product product){
         return this.sales.get(product);
     }

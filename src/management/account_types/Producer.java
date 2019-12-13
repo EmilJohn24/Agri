@@ -4,7 +4,6 @@ import management.Account;
 import market.*;
 import objects.list.List;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,15 +16,23 @@ public class Producer extends Account {
     public List<Reservation> getOfficialReservations(){
         return officialReservations;
     }
+
     public Producer(String name, String passwordHash) {
         super(name, passwordHash);
         productsForSale = new List<>();
         productsStored = new List<>();
         pendingReservations = new LinkedList<>();
         officialReservations = new List<>();
-
     }
 
+    public void notifyAllSubscribers(String text){
+        for (Account subscribers : getSubscriptions()){
+            if (subscribers instanceof Consumer){
+                Consumer subscriber = (Consumer) subscribers;
+                subscriber.addNotification(this.getName() + " : " + text);
+            }
+        }
+    }
     public void requestReservation(Reservation reservation){
         pendingReservations.add(reservation);
     }

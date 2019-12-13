@@ -60,7 +60,7 @@
             <Font name="Segoe UI" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="219.0" layoutY="258.0" text="Recommended Price:">
+      <Label fx:id="recommendedPrice" layoutX="219.0" layoutY="258.0" text="Recommended Price:">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>

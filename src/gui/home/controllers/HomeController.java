@@ -144,10 +144,8 @@ public class HomeController {
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == buttonTypeOne) {
-                // ... user chose "One"
                 userAccountProducerAdapter.addFrontReservationTo(GlobalMarket.getGlobalMarket());
             } else if (result.get() == buttonTypeTwo) {
-                // ... user chose "Two"
                 userAccountProducerAdapter.removeFrontReservation();
 
 
@@ -155,19 +153,26 @@ public class HomeController {
         }
     }
 
-        public void accessController(){
-            if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Consumer) {
-                //disables consumer-disabled features
-                sell.setDisable(true);
-                crops.setDisable(true);
-            } else if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Producer) {
-                //disables producer-disabled features
-                buy.setDisable(true);
-                friends.setDisable(true);
-                alertReservationsPending();
-            }
+    private void alertNotifications(){
+        Consumer consumer = (Consumer) GlobalSessionHolder.currentSession.getSessionAccount();
+        while (consumer.hasNotifications()){
+            Alert newAlert = new Alert(Alert.AlertType.INFORMATION);
+            newAlert.setTitle("Notification");
+            newAlert.setHeaderText(consumer.getNextNotification());
         }
+    }
 
-        public void loadMap (MouseEvent mouseEvent){
+    private void accessController(){
+        if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Consumer) {
+            //disables consumer-disabled features
+            sell.setDisable(true);
+            crops.setDisable(true);
+            alertNotifications();
+        } else if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Producer) {
+            //disables producer-disabled features
+            buy.setDisable(true);
+            friends.setDisable(true);
+            alertReservationsPending();
         }
+    }
     }

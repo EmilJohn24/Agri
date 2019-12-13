@@ -3,15 +3,13 @@ package management;
 import management.account_types.Consumer;
 import management.account_types.Producer;
 import map.Point;
-import market.Reservation;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
 public class Account {
-    private List<Account> friends;
-    private ArrayList<Session> sessions;
+    private List<Account> subscriptions;
+    private List<Session> sessions;
     private String name;
     private String passwordHash;
     private Point farmLocation;
@@ -35,20 +33,20 @@ public class Account {
     protected Account(String name, String passwordHash){
         this.name = name;
         this.passwordHash = passwordHash;
-        this.friends = new ArrayList<>();
+        this.subscriptions = new ArrayList<>();
         this.sessions = new ArrayList<>();
 
     }
 
 
     public void addFriend(Account acc){
-        friends.add(acc);
+        subscriptions.add(acc);
     }
-    public void removeFriend(Account acc) {  friends.remove(acc); }
+    public void removeFriend(Account acc) {  subscriptions.remove(acc); }
 
 
-    public final List<Account> getFriends(){
-        return friends;
+    public final List<Account> getSubscriptions(){
+        return subscriptions;
     }
 
     public String getName() {
