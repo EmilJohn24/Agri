@@ -27,4 +27,12 @@ public class Array<T> {
         while (index >= currentSize) reallocate();
         data[index] = passedData;
     }
+
+    public T get(int index){
+        return data[index];
+    }
+
+    public void set(int index, T obj){
+        data[index] = obj;
+    }
 }
