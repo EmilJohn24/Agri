@@ -24,13 +24,12 @@ public class List<T> implements ListInterface<T>, Iterable<T> {
         this.root = null;
     }
 
-//    @Override
-//    public void add(T item) {
-//        ListNode<T> newNode = new ListNode<>(item, root);
-//        if (empty()) this.root = newNode;
-//        else root = newNode;
-//        size++;
-//    }
+    public void addFront(T item) {
+        ListNode<T> newNode = new ListNode<>(item, root);
+        if (empty()) this.root = newNode;
+        else root = newNode;
+        size++;
+    }
 
     @Override
     public void add(T item){
@@ -40,7 +39,7 @@ public class List<T> implements ListInterface<T>, Iterable<T> {
     @Override
     public void add(int index, T item) {
         if (index > size || index < 0) throw new IndexOutOfBoundsException("Invalid index");
-        else if (index == 0) add(item);
+        else if (index == 0) addFront(item);
         ListNode<T> previous = getNodeBefore(index);
         ListNode<T> newNode = new ListNode<T>(item, previous.getNext());
         previous.setNext(newNode);

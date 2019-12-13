@@ -1,32 +1,38 @@
 package management.account_types;
 
 import management.Account;
-import map.Point;
 import market.*;
+import objects.list.List;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class Producer extends Account {
     private Queue<Reservation> pendingReservations;
     private List<Item> productsForSale;
     private List<Item> productsStored;
+    private List<Reservation> officialReservations;
 
-
+    public List<Reservation> getOfficialReservations(){
+        return officialReservations;
+    }
     public Producer(String name, String passwordHash) {
         super(name, passwordHash);
-        productsForSale = new ArrayList<>();
-        productsStored = new ArrayList<>();
+        productsForSale = new List<>();
+        productsStored = new List<>();
         pendingReservations = new LinkedList<>();
+        officialReservations = new List<>();
+
     }
 
     public void requestReservation(Reservation reservation){
         pendingReservations.add(reservation);
     }
     public void addFrontReservationTo(Market market){
-        market.addReservation(pendingReservations.remove());
+        Reservation reservation = pendingReservations.remove();
+        market.addReservation(reservation);
+        officialReservations.add(reservation);
     }
     public Reservation peekFrontReservation(){
         return pendingReservations.peek();

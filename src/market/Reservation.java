@@ -1,8 +1,10 @@
 package market;
 
 import com.sun.istack.internal.NotNull;
+import javafx.scene.image.Image;
 import management.Account;
 
+import javax.swing.text.html.ImageView;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -13,13 +15,14 @@ public class Reservation {
     private LocalDate date;
     private Product product;
     private Integer amount;
-
+    private Image image;
     public Reservation(@NotNull Account seller, @NotNull Account buyer, @NotNull LocalDate date,@NotNull Product product,@NotNull Integer amount) {
         this.seller = seller;
         this.buyer = buyer;
         this.date = date;
         this.product = product;
         this.amount = amount;
+
     }
 
     private void setDate(LocalDate date) {
@@ -52,5 +55,14 @@ public class Reservation {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 }

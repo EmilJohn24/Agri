@@ -7,9 +7,9 @@ import javafx.scene.control.ListView;
 import management.GlobalSessionHolder;
 import management.account_types.Producer;
 import market.Item;
+import objects.list.List;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SellController {
     @FXML
