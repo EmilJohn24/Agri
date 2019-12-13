@@ -21,8 +21,6 @@ public class SellController {
     @FXML
     private Button removeFromMarketButton;
     @FXML
-    private Button updateCurrentProductButton;
-    @FXML
     private ListView<String> cropsInStockView;
     @FXML
     private ListView<String> cropsForSale;
@@ -97,15 +95,10 @@ public class SellController {
         updateCrops();
     }
 
-    private void updateCurrentProduct(){
-        //TODO: Ano ginagawa nito?
-    }
-
 
     private void buttonSetup(){
         addToMarketButton.setOnMouseClicked(event -> addToMarket());
         removeFromMarketButton.setOnMouseClicked(event -> removeFromMarket());
-        updateCurrentProductButton.setOnMouseClicked(event -> updateCurrentProduct());
         cropsForSale.setOnMouseClicked(event -> updateLabels());
         cropsInStockView.setOnMouseClicked(event -> updateLabels());
     }
