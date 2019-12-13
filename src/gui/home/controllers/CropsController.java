@@ -57,7 +57,7 @@ public class CropsController {
         TextInputDialog dialog = new TextInputDialog("0.0");
         dialog.setTitle("Price");
         dialog.setHeaderText("Price");
-        dialog.setContentText("Type the price for this product");
+        dialog.setContentText("Type the price for this product: ");
 
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()) return Double.valueOf(result.get());
@@ -68,7 +68,6 @@ public class CropsController {
         dialog.setTitle("Quantity");
         dialog.setHeaderText("Quantity");
         dialog.setContentText("Type the new quantity for this product");
-
         Optional<String> result = dialog.showAndWait();
         return Integer.valueOf(result.get());
     }
@@ -110,7 +109,6 @@ public class CropsController {
         Item product = getUpdateItem();
         priceLabel.setText(String.valueOf(product.getPrice()));
         quantityLabel.setText(String.valueOf(product.getQuantity()));
-
     }
 
     private Item getUpdateItem() {

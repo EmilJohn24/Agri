@@ -6,12 +6,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import management.GlobalSessionHolder;
 import management.account_types.Producer;
+import market.GlobalMarket;
 import market.Item;
+import market.Product;
 import objects.list.List;
 
 import java.util.ArrayList;
 
 public class SellController {
+    public Label recommendedPrice;
     @FXML
     private Button addToMarketButton;
     @FXML
@@ -33,13 +36,16 @@ public class SellController {
         int stockUpdateIndex = cropsInStockView.getSelectionModel().getSelectedIndices().get(0);
         int saleUpdateIndex = cropsForSale.getSelectionModel().getSelectedIndices().get(0);
         String quantityString, priceString;
+        Product product = null;
         if (stockUpdateIndex >= 0) {
             priceString = String.valueOf(currentAccount.getProductsStored().get(stockUpdateIndex).getPrice());
             quantityString = String.valueOf(currentAccount.getProductsStored().get(stockUpdateIndex).getQuantity());
+            product = currentAccount.getProductsStored().get(stockUpdateIndex).getProduct();
         }
         else if (saleUpdateIndex >= 0){
             priceString = String.valueOf(currentAccount.getProductsForSale().get(saleUpdateIndex).getPrice());
             quantityString = String.valueOf(currentAccount.getProductsForSale().get(saleUpdateIndex).getQuantity());
+            product = currentAccount.getProductsForSale().get(saleUpdateIndex).getProduct();
         }else{
 
             priceString = "0.00";
@@ -47,7 +53,10 @@ public class SellController {
         }
         priceLabel.setText(priceString);
         quantityLabel.setText(quantityString);
+        if (product != null)
+            recommendedPrice.setText(String.valueOf(GlobalMarket.getGlobalMarket().getRecommendedPriceFor(product)));
     }
+
     private void updateCrops(){
         loadCropsInStock();
         loadCropsForSale();

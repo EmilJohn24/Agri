@@ -12,19 +12,24 @@ import management.GlobalSessionHolder;
 import management.SubscriptionTree;
 import management.account_types.Consumer;
 import management.account_types.Producer;
+import market.Item;
 import objects.list.List;
 
+import java.util.Collection;
 import java.util.Optional;
 
 public class FriendsController {
     public JFXListView<String> subscriptionList;
     public Label subscriptionCount;
+    public JFXListView<String> saleList;
+    public JFXListView<String> reservableList;
     private SubscriptionTree subscriptionTree;
     private List<Producer> temporarySubscriptionList;
 
     private void loadSubscriptions(){
-        subscriptionCount.setText("" + GlobalSessionHolder.currentSession.getSessionAccount().getFriends().size());
-        for (Account acc : GlobalSessionHolder.currentSession.getSessionAccount().getFriends()){
+        subscriptionList.getItems().clear();
+        subscriptionCount.setText("" + GlobalSessionHolder.currentSession.getSessionAccount().getSubscriptions().size());
+        for (Account acc : GlobalSessionHolder.currentSession.getSessionAccount().getSubscriptions()){
             if (acc instanceof Producer){
                 subscriptionList.getItems().add(acc.getName());
                 temporarySubscriptionList.add((Producer) acc);
@@ -57,11 +62,32 @@ public class FriendsController {
         loadSubscriptions();
     }
 
+    private List<Producer> getSelectedSubscriptions(){
+        Collection<Integer> pickedItems = subscriptionList.getSelectionModel().getSelectedIndices();
+        List<Producer> selectedProducers = new List<>();
+        for (Integer pickedItemIndex : pickedItems){
+            selectedProducers.add(temporarySubscriptionList.get(pickedItemIndex));
+        }
+        return selectedProducers;
+    }
+
     public void removeFriend(MouseEvent mouseEvent) {
+        for (Producer p : getSelectedSubscriptions()){
+            AccountManager.getAccountManager().endSubscription((Consumer) GlobalSessionHolder.currentSession.getSessionAccount(), p);
+        }
+        loadSubscriptions();
     }
 
     public void viewSubscription(MouseEvent mouseEvent) {
+        reservableList.getItems().clear();
+        for (Item i : getSelectedSubscriptions().get(0).getProductsStored()){
+            reservableList.getItems().add(i.getProduct().getName() + " - Php" + i.getPrice());
+        }
 
+        saleList.getItems().clear();
+        for (Item i : getSelectedSubscriptions().get(0).getProductsForSale()){
+            saleList.getItems().add(i.getProduct().getName() + " - Php " + i.getPrice() + " - Quantity Left: " + i.getQuantity());
+        }
     }
 
     @FXML
@@ -70,9 +96,6 @@ public class FriendsController {
         temporarySubscriptionList = new List<>();
         if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Consumer){
             loadSubscriptions();
-        }
-        else{
-
         }
     }
 }

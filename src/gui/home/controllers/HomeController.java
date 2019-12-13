@@ -168,7 +168,7 @@ public class HomeController {
         }
     }
 
-    public void accessController(){
+    private void accessController(){
         if (GlobalSessionHolder.currentSession.getSessionAccount() instanceof Consumer) {
             //disables consumer-disabled features
             sell.setDisable(true);
