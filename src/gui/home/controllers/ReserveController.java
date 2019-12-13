@@ -80,6 +80,7 @@ public class ReserveController {
             updateLabels();
 
         });
+
         quantityBuyTextField.setOnAction(event -> {
             //TODO: Check if there are enough stocks
             pendingQuantity =  Integer.valueOf(quantityBuyTextField.getText());

@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.home.controllers.MonitorController">
    <children>
-      <ImageView fx:id="cropImage" fitHeight="184.0" fitWidth="466.0" layoutX="67.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
-      <TableView fx:id="reservationTable" layoutX="92.0" layoutY="228.0" prefHeight="143.0" prefWidth="427.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="75.0" text="Item" />
-            <TableColumn prefWidth="75.0" text="Quantity" />
-            <TableColumn prefWidth="75.0" text="Date Due" />
-            <TableColumn prefWidth="75.0" text="Status" />
-            <TableColumn prefWidth="75.0" text="Upload"/>
+      <ImageView fx:id="cropImage" fitHeight="184.0" fitWidth="466.0" layoutX="208.0" layoutY="14.0" onMouseClicked="#onClickImageView" pickOnBounds="true" preserveRatio="true" style="fx-background-color: GREEN;">
+         <image>
+            <Image url="@../../../../crops.jpg" />
+         </image></ImageView>
+      <ListView fx:id="reservationTable" layoutX="92.0" layoutY="228.0" onMouseClicked="#onChoose" prefHeight="143.0" prefWidth="427.0">
 
-        </columns>
-      </TableView>
+      </ListView>
    </children>
 </AnchorPane>

@@ -30,6 +30,17 @@ public class AccountManager {
         globalAccManager.makeCompanyAccounts();
     }
 
+
+    public SubscriptionTree buildSubscriptionTree(){
+        SubscriptionTree tree = new SubscriptionTree();
+        for (Account a : accounts.values()){
+            if (a instanceof Producer){
+                tree.add((Producer) a);
+            }
+        }
+
+        return tree;
+    }
     private void makeCompanyAccounts(){
         this.addUser("Purefoods", "admin", AccountManager.PRODUCER_ID);
         this.addUser("Bounty Farms", "admin", AccountManager.PRODUCER_ID);
