@@ -14,6 +14,7 @@ import objects.list.List;
 import java.util.ArrayList;
 
 public class SellController {
+    @FXML
     public Label recommendedPrice;
     @FXML
     private Button addToMarketButton;
@@ -29,7 +30,7 @@ public class SellController {
     private Label priceLabel;
     @FXML
     private Label quantityLabel;
-
+    @FXML
     private Producer currentAccount;
 
     private void updateLabels(){
@@ -101,7 +102,6 @@ public class SellController {
     }
 
 
-
     private void buttonSetup(){
         addToMarketButton.setOnMouseClicked(event -> addToMarket());
         removeFromMarketButton.setOnMouseClicked(event -> removeFromMarket());
@@ -110,44 +110,10 @@ public class SellController {
         cropsInStockView.setOnMouseClicked(event -> updateLabels());
     }
 
-
     @FXML
     public void initialize(){
         currentAccount = (Producer) GlobalSessionHolder.currentSession.getSessionAccount();
         buttonSetup();
         updateCrops();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

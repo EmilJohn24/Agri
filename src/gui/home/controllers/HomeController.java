@@ -16,6 +16,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import management.Account;
 import management.AccountManager;
@@ -26,6 +27,7 @@ import management.account_types.Producer;
 import market.GlobalMarket;
 import market.Reservation;
 
+import javax.swing.*;
 import javax.xml.bind.NotIdentifiableEvent;
 import java.io.IOException;
 import java.util.Optional;
@@ -78,7 +80,7 @@ public class HomeController {
     }
 
     public void friendsMenu() throws IOException {
-        load("viewfriends.fxml", "Your Friends");
+        load("viewfriends.fxml", "Subscriptions");
     }
 
     public void sellMenu() throws IOException {
@@ -94,10 +96,11 @@ public class HomeController {
     }
 
     public void mapMenu() throws IOException {
-        load("map.fxml", "Map ");
+        load("map.fxml", "Transactions");
     }
 
-    public void logoutButton(){
+    public void logoutButton(ActionEvent event){
+
 
     }
 
