@@ -1,15 +1,9 @@
 package gui.home.controllers;
 
-import javafx.scene.Node;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import management.AccountManager;
 import management.GlobalSessionHolder;
-import management.Session;
 import management.account_types.Producer;
 import market.Reservation;
 
@@ -17,8 +11,6 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.time.format.DateTimeFormatter;
-import java.util.Map;
 
 public class MonitorController {
     public ImageView cropImage;
