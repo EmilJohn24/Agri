@@ -51,6 +51,7 @@ public class HomeController implements Initializable {
 
     @FXML
     private AnchorPane display;
+    @FXML
     private AnchorPane anchorPane;
 
     @FXML
