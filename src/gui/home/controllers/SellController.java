@@ -14,13 +14,12 @@ import objects.list.List;
 import java.util.ArrayList;
 
 public class SellController {
+    @FXML
     public Label recommendedPrice;
     @FXML
     private Button addToMarketButton;
     @FXML
     private Button removeFromMarketButton;
-    @FXML
-    private Button updateCurrentProductButton;
     @FXML
     private ListView<String> cropsInStockView;
     @FXML
@@ -29,7 +28,7 @@ public class SellController {
     private Label priceLabel;
     @FXML
     private Label quantityLabel;
-
+    @FXML
     private Producer currentAccount;
 
     private void updateLabels(){
@@ -96,20 +95,13 @@ public class SellController {
         updateCrops();
     }
 
-    private void updateCurrentProduct(){
-        //TODO: Ano ginagawa nito?
-    }
-
-
 
     private void buttonSetup(){
         addToMarketButton.setOnMouseClicked(event -> addToMarket());
         removeFromMarketButton.setOnMouseClicked(event -> removeFromMarket());
-        updateCurrentProductButton.setOnMouseClicked(event -> updateCurrentProduct());
         cropsForSale.setOnMouseClicked(event -> updateLabels());
         cropsInStockView.setOnMouseClicked(event -> updateLabels());
     }
-
 
     @FXML
     public void initialize(){
@@ -117,37 +109,4 @@ public class SellController {
         buttonSetup();
         updateCrops();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

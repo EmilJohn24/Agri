@@ -25,7 +25,7 @@
          </font>
       </Label>
       <ListView fx:id="cropsForSale" layoutX="386.0" layoutY="71.0" prefHeight="124.0" prefWidth="200.0" />
-      <Button fx:id="addToMarketButton" layoutX="222.0" layoutY="82.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" stylesheets="@css/style.css" text="Add to Marketplace">
+      <Button fx:id="addToMarketButton" layoutX="221.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" stylesheets="@css/style.css" text="Add to Marketplace">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font>
@@ -50,22 +50,17 @@
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="removeFromMarketButton" layoutX="221.0" layoutY="166.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Remove from Marketplace" textFill="#eb0d0d">
+      <Button fx:id="removeFromMarketButton" layoutX="221.0" layoutY="148.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Remove from Marketplace" textFill="#eb0d0d">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="updateCurrentProductButton" layoutX="221.0" layoutY="125.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" stylesheets="@css/style.css" text="Update Current Product">
-         <font>
-            <Font name="Segoe UI" size="12.0" />
-         </font>
-      </Button>
-      <Label fx:id="recommendedPrice" layoutX="219.0" layoutY="258.0" text="Recommended Price:">
+      <Label layoutX="219.0" layoutY="258.0" text="Recommended Price:">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="362.0" layoutY="258.0" text="P0.00">
+      <Label fx:id="recommendedPrice" layoutX="362.0" layoutY="258.0" text="P0.00">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>

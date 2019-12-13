@@ -18,7 +18,7 @@
             <Font name="Segoe UI" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="265.0" layoutY="96.0" text="Version 2.0" textFill="#919191">
+      <Label layoutX="265.0" layoutY="96.0" text="Version 1.0" textFill="#919191">
          <font>
             <Font name="Segoe UI Light" size="15.0" />
          </font>

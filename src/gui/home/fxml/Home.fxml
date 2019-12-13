@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXDrawer?>
-<?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -15,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.home.controllers.HomeController">
    <children>
-      <Pane prefHeight="200.0" prefWidth="1280.0" style="-fx-background-color: #4169E1;">
+      <Pane layoutY="-12.0" prefHeight="200.0" prefWidth="1280.0" style="-fx-background-color: #4169E1;">
          <children>
             <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="105.0" styleClass="button2" stylesheets="@css/style.css">
                <graphic>
@@ -40,7 +38,12 @@
                   </ImageView>
                </graphic>
             </Button>
-            <JFXHamburger fx:id="drawButton" layoutX="1231.0" layoutY="14.0" />
+            <Button fx:id="logoutButton" layoutX="1212.0" layoutY="12.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="54.0" styleClass="button2" stylesheets="@css/style.css" />
+            <ImageView fitHeight="67.0" fitWidth="45.0" layoutX="1221.0" layoutY="21.0">
+               <image>
+                  <Image url="@../assets/logout.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <AnchorPane fx:id="display" layoutX="346.0" layoutY="239.0" prefHeight="400.0" prefWidth="610.0">
@@ -81,7 +84,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="friends" contentDisplay="TOP" layoutX="10.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#friendsMenu" prefHeight="107.0" prefWidth="315.0" stylesheets="@css/style.css" text="Friends" textFill="DIMGRAY" GridPane.rowIndex="2">
+                  <Button fx:id="friends" contentDisplay="TOP" layoutX="10.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#friendsMenu" prefHeight="107.0" prefWidth="315.0" stylesheets="@css/style.css" text="Subscription" textFill="DIMGRAY" GridPane.rowIndex="2">
                      <graphic>
                         <ImageView fitHeight="59.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -117,11 +120,11 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="map" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#mapMenu" prefHeight="107.0" prefWidth="311.0" stylesheets="@css/style.css" text="Map" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="map" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#mapMenu" prefHeight="107.0" prefWidth="311.0" stylesheets="@css/style.css" text="Transactions" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <graphic>
                         <ImageView fitHeight="53.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/map.png" />
+                              <Image url="@../assets/receipt.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -157,11 +160,5 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <Button layoutX="346.0" layoutY="656.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Logout" textFill="#f40606">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <JFXDrawer fx:id="drawer" layoutY="200.0" prefHeight="519.0" prefWidth="186.0" />
    </children>
 </AnchorPane>
