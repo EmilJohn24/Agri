@@ -185,6 +185,8 @@ public class HomeController implements Initializable {
             //disables producer-disabled features
             buy.setDisable(true);
             friends.setDisable(true);
+            map.setDisable(true);
+            reserve.setDisable(true);
             alertReservationsPending();
         }
     }
