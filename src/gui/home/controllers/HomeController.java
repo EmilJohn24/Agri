@@ -28,6 +28,7 @@ import management.account_types.Consumer;
 import management.account_types.Producer;
 import market.GlobalMarket;
 import market.Reservation;
+import objects.stack.Stack;
 
 import javax.swing.*;
 import javax.xml.bind.NotIdentifiableEvent;
@@ -35,7 +36,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import java.util.Stack;
 
 public class HomeController implements Initializable {
 
@@ -67,13 +67,15 @@ public class HomeController implements Initializable {
     private Label title;
 
     @FXML
-    private Stack<Node> previousMenus;
-    private Stack<String> titles;
+    private objects.stack.Stack<Node> previousMenus;
+    private objects.stack.Stack<String> titles;
 
     public void back() throws IOException {
-        loadNodeIntoDisplay(previousMenus.pop());
-        changeTitle(titles.pop());
-        if (previousMenus.empty()) backButton.setDisable(true);
+        loadNodeIntoDisplay(previousMenus.top());
+        previousMenus.pop();
+        changeTitle(titles.top());
+        titles.pop();
+        if (previousMenus.isEmpty()) backButton.setDisable(true);
     }
 
     private void changeTitle(String name) {

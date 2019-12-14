@@ -3,9 +3,8 @@ package management.account_types;
 import management.Account;
 import market.*;
 import objects.list.List;
+import objects.queue.Queue;
 
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Producer extends Account {
     private Queue<Reservation> pendingReservations;
@@ -21,7 +20,7 @@ public class Producer extends Account {
         super(name, passwordHash);
         productsForSale = new List<>();
         productsStored = new List<>();
-        pendingReservations = new LinkedList<>();
+        pendingReservations = new Queue<>();
         officialReservations = new List<>();
     }
 
@@ -34,18 +33,18 @@ public class Producer extends Account {
         }
     }
     public void requestReservation(Reservation reservation){
-        pendingReservations.add(reservation);
+        pendingReservations.push(reservation);
     }
     public void addFrontReservationTo(Market market){
-        Reservation reservation = pendingReservations.remove();
+        Reservation reservation = pendingReservations.pop();
         market.addReservation(reservation);
         officialReservations.add(reservation);
     }
     public Reservation peekFrontReservation(){
-        return pendingReservations.peek();
+        return pendingReservations.front();
     }
-    public boolean hasReservations(){ return !pendingReservations.isEmpty(); }
-    public void removeFrontReservation(){ pendingReservations.remove(); }
+    public boolean hasReservations(){ return !pendingReservations.empty(); }
+    public void removeFrontReservation(){ pendingReservations.pop(); }
     public void addProductForSale(Item product){
         GlobalMarket.getGlobalMarket().addMarketItem(product);
         productsForSale.add(product);

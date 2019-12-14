@@ -2,6 +2,7 @@ package market;
 
 import management.Account;
 import management.account_types.Producer;
+import objects.list.List;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -45,14 +46,14 @@ class MarketTest {
     void addMarketItem() {
         testMarket.addMarketItem(testItem);
         testMarket.addMarketItem(testItem2);
-        LinkedList<Item> sales = testMarket.getMarketList(testProduct);
+        List<Item> sales = testMarket.getMarketList(testProduct);
         assert(sales.get(0).getProduct() == testProduct && sales.get(0).getSeller() == testAccount);
     }
 
     @org.junit.jupiter.api.Test
     void removeMarketItem() {
         addMarketItem();
-        LinkedList<Item> sales = testMarket.getMarketList(testProduct);
+        List<Item> sales = testMarket.getMarketList(testProduct);
         assert(sales.size() == 2);
         testMarket.removeMarketItem(testItem);
         testMarket.removeMarketItem(testItem2);

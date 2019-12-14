@@ -63,6 +63,7 @@ public class CropsController {
         if (result.isPresent()) return Double.valueOf(result.get());
         else return 0.0;
     }
+
     private Integer askForQuantity(){
         TextInputDialog dialog = new TextInputDialog("0.0");
         dialog.setTitle("Quantity");

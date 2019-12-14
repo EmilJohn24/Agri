@@ -11,7 +11,7 @@ public class ListIterator<E> implements Iterator<E> {
     }
     @Override
     public boolean hasNext() {
-        return current != null && current.getNext() != null;
+        return current != null;
     }
 
     @Override

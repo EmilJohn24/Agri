@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -16,6 +17,7 @@ import management.account_types.Producer;
 import market.GlobalMarket;
 import market.Item;
 import market.Product;
+import objects.list.List;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -58,6 +60,13 @@ public class BuyController {
     public void buyOperation(){
         Consumer customer = (Consumer) GlobalSessionHolder.currentSession.getSessionAccount();
         customer.addItemBought(pendingSale.subtractQuantity(pendingQuantity));
+        Alert success = new Alert(Alert.AlertType.INFORMATION);
+        success.setTitle("Buy");
+        success.setHeaderText("Successful transaction!");
+        success.setContentText("Producer: " + pendingSale.getSeller().getName() + "\nProduct: " + pendingSale.getProduct().getName() +
+                "\nTotal price: Php" + getPendingTotalPrice() +
+                "\nQuantity: " + pendingQuantity);
+        success.showAndWait();
     }
     @FXML
     public void initialize(){
@@ -98,13 +107,13 @@ public class BuyController {
                 n.setStyle("-fx-background-color: WHITE;");
         }
         buttonPicked.setStyle("-fx-background-color: BLUE;");
-        LinkedList<Product> products = GlobalMarket.getGlobalMarket().getProductList();
+        List<Product> products = GlobalMarket.getGlobalMarket().getProductList();
         productPicked = products.get(index);
         loadCompanies();
     }
 
     private void initializeGrid(){
-        LinkedList<Product> products = GlobalMarket.getGlobalMarket().getProductList();
+        List<Product> products = GlobalMarket.getGlobalMarket().getProductList();
         int index = 0;
         int size = products.size();
         for (Product p : products){

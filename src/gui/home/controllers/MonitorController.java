@@ -27,7 +27,7 @@ public class MonitorController {
             Files.copy(selectedImage.toPath(),
                     new File("./" + directory).toPath());
             choosenReservation.setImage(new Image("file:" + "./" + directory));
-            cropImage.setImage(choosenReservation.getImage());
+                cropImage.setImage(choosenReservation.getImage());
         }
     }
 

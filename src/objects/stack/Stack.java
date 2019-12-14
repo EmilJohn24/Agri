@@ -46,11 +46,11 @@ public class Stack<T> implements StackInterface<T> {
 
     @Override
     public int size() {
-        return this.length;
+        return this.stackPointer;
     }
 
     public Stack(){
-        this(1);
+        this(1000);
     }
     public Stack(int size){
         this.container = (T[]) new Object[size];

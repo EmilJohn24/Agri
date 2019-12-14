@@ -1,23 +1,23 @@
 package market;
 
 import management.Account;
+import objects.list.List;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Hashtable;
 import java.util.LinkedList;
 
 public class Market {
-    private Hashtable<Product, LinkedList<Item>> sales;
-    private LinkedList<Reservation> officialReservations;
+    private Hashtable<Product, List<Item>> sales;
+    private List<Reservation> officialReservations;
 
     Market(){
         sales = new Hashtable<>();
-        officialReservations = new LinkedList<>();
+        officialReservations = new List<>();
     }
 
     public Double getRecommendedPriceFor(Product p){
-        LinkedList<Item> productItems = sales.get(p);
+        List<Item> productItems = sales.get(p);
         Double cumPrice = 0.0;
         Double cumQuantity = 0.0;
         for (Item i : productItems){
@@ -27,14 +27,14 @@ public class Market {
         return cumPrice / cumQuantity;
     }
 
-    public LinkedList<Item> getMarketList(Product product){
+    public List<Item> getMarketList(Product product){
         return this.sales.get(product);
     }
 
-    public LinkedList<Product> getProductList(){ return new LinkedList<>(this.sales.keySet()); }
+    public List<Product> getProductList(){ return new List<>(this.sales.keySet()); }
 
     public void addIfAbsent(Product newProduct){
-        sales.putIfAbsent(newProduct, new LinkedList<>());
+        sales.putIfAbsent(newProduct, new List<>());
     }
 
     public void remove(Product removedProduct){

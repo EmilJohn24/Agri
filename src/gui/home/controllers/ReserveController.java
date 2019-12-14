@@ -20,10 +20,10 @@ import market.GlobalMarket;
 import market.Item;
 import market.Product;
 import market.Reservation;
+import objects.list.List;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class ReserveController {
     public JFXComboBox companyPicker;
@@ -106,13 +106,13 @@ public class ReserveController {
                 n.setStyle("-fx-background-color: WHITE;");
         }
         buttonPicked.setStyle("-fx-background-color: BLUE;");
-        LinkedList<Product> products = GlobalMarket.getGlobalMarket().getProductList();
+        List<Product> products = GlobalMarket.getGlobalMarket().getProductList();
         productPicked = products.get(index);
         loadCompanies();
     }
 
     private void initializeGrid(){
-        LinkedList<Product> products = GlobalMarket.getGlobalMarket().getProductList();
+        List<Product> products = GlobalMarket.getGlobalMarket().getProductList();
         int index = 0;
         int size = products.size();
         for (Product p : products){

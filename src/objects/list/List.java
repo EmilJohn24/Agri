@@ -1,5 +1,6 @@
 package objects.list;
 
+import java.util.Collection;
 import java.util.Iterator;
 
 public class List<T> implements ListInterface<T>, Iterable<T> {
@@ -19,9 +20,17 @@ public class List<T> implements ListInterface<T>, Iterable<T> {
         return explorer;
     }
 
+
+
     public List(){
         this.size = 0;
         this.root = null;
+    }
+
+    public List(Collection<T> collection){
+        for (T item : collection){
+            add(item);
+        }
     }
 
     public void addFront(T item) {
@@ -39,7 +48,11 @@ public class List<T> implements ListInterface<T>, Iterable<T> {
     @Override
     public void add(int index, T item) {
         if (index > size || index < 0) throw new IndexOutOfBoundsException("Invalid index");
-        else if (index == 0) addFront(item);
+        else if (index == 0) {
+            this.root = new ListNode<>(item, root);
+            size++;
+            return;
+        }
         ListNode<T> previous = getNodeBefore(index);
         ListNode<T> newNode = new ListNode<T>(item, previous.getNext());
         previous.setNext(newNode);
@@ -47,6 +60,9 @@ public class List<T> implements ListInterface<T>, Iterable<T> {
     }
 
 
+    public void remove(T obj){
+        remove(indexOf(obj));
+    }
 
     @Override
     public void remove(int index) {

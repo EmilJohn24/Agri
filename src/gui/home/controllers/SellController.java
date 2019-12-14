@@ -61,7 +61,6 @@ public class SellController {
             quantityString = String.valueOf(currentAccount.getProductsForSale().get(saleUpdateIndex).getQuantity());
             product = currentAccount.getProductsForSale().get(saleUpdateIndex).getProduct();
         }else{
-
             priceString = "0.00";
             quantityString = "0";
         }
