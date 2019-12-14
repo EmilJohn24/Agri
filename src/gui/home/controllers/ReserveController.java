@@ -57,7 +57,7 @@ public class ReserveController {
     }
 
     private Double getPendingTotalPrice(){
-        Period interval = Period.between(pendingLocalDate, LocalDate.now());
+        Period interval = Period.between(LocalDate.now(), pendingLocalDate);
         return pendingSale.getPrice() * pendingQuantity + interval.getDays();
     }
     private void priceUpdate(){

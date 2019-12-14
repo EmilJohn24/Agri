@@ -78,8 +78,11 @@ public class HomeController implements Initializable {
         if (previousMenus.isEmpty()) backButton.setDisable(true);
     }
 
-    private void changeTitle(String name) {
+    private void pushAndChangeTitle(String name){
         titles.push(title.getText());
+        changeTitle(name);
+    }
+    private void changeTitle(String name) {
         title.setText(name);
     }
 
@@ -122,7 +125,7 @@ public class HomeController implements Initializable {
 
     private void load(String filename, String title) throws IOException {
         loadDisplay(filename);
-        changeTitle(title);
+        pushAndChangeTitle(title);
     }
 
     private void loadDisplay(String fileName) throws IOException {
