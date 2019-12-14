@@ -73,6 +73,14 @@ public class Market {
         return reservations;
     }
 
+    public ArrayList<Reservation> getReservationsThrough(Account acc){
+        ArrayList<Reservation> reservations = new ArrayList<>();
+        for (Reservation r : officialReservations){
+            if (r.getBuyer() == acc) reservations.add(r);
+        }
+        return reservations;
+    }
+
 
 
 

@@ -52,7 +52,7 @@ public class MonitorController {
 
     public void onChooseConsumer(){
         Integer choice = reservationTable.getSelectionModel().getSelectedIndices().get(0);
-        choosenReservation = consumerReservations.get(choice);
+        choosenReservation = GlobalMarket.getGlobalMarket().getReservationsThrough(checkingConsumer).get(choice);
         loadChoosenReservationPic();
 
     }
@@ -69,7 +69,7 @@ public class MonitorController {
     public void loadTableConsumer(){
         reservationTable.getItems().clear();
         checkingConsumer = (Consumer) GlobalSessionHolder.currentSession.getSessionAccount();
-        for (Reservation reservation : GlobalMarket.getGlobalMarket().getReservationsBy(checkingConsumer)){
+        for (Reservation reservation : GlobalMarket.getGlobalMarket().getReservationsThrough(checkingConsumer)){
             reservationTable.getItems().add(reservation.getBuyer().getName() + " - " +
                     reservation.getProduct().getName() + " - " + reservation.getAmount() + " - " +
                     reservation.getDate().toString());
