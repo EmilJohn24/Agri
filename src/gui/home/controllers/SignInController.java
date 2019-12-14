@@ -45,9 +45,9 @@ public class SignInController {
         Parent root = FXMLLoader.load(Main.class.getResource("fxml/Home.fxml"));
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Agri");
-
-        primaryStage.setScene(new Scene(root, 1920, 950));
-        primaryStage.setFullScreen(true);
+        primaryStage.setScene(new Scene(root, 1080, 950));
+        //primaryStage.setFullScreen(true);
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 }

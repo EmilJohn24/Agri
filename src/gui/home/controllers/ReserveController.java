@@ -23,6 +23,7 @@ import market.Reservation;
 import objects.list.List;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 
 public class ReserveController {
@@ -56,7 +57,8 @@ public class ReserveController {
     }
 
     private Double getPendingTotalPrice(){
-        return pendingSale.getPrice() * pendingQuantity;
+        Period interval = Period.between(pendingLocalDate, LocalDate.now());
+        return pendingSale.getPrice() * pendingQuantity + interval.getDays();
     }
     private void priceUpdate(){
         totalPriceLabel.setText(String.valueOf(getPendingTotalPrice()));

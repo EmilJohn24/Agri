@@ -171,6 +171,7 @@ public class HomeController implements Initializable {
             Alert newAlert = new Alert(Alert.AlertType.INFORMATION);
             newAlert.setTitle("Notification");
             newAlert.setHeaderText(consumer.getNextNotification());
+            newAlert.showAndWait();
         }
     }
 
